@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,7 +19,7 @@ public class PrimeNum {
         int[] seperatedNum = new int[numbers.length()];
 
         //순열을 통해 만들어 낼 숫자 리스트
-        Set<Integer> permList = new HashSet<>();
+        ArrayList<Integer> permList = new ArrayList<Integer>();
 
         int length = numbers.length();
 
@@ -29,7 +30,7 @@ public class PrimeNum {
 
         //조합순열을 통해 숫자 리스트 생성 구현해야함
         for(int i =1; i < length; i++){
-            perm(seperatedNum, 0, length, i, permList);
+            perm(seperatedNum, 0, seperatedNum.length, i, permList);
         }
 
         //소수를 찾아 배열에 저장
@@ -43,17 +44,17 @@ public class PrimeNum {
         return answer;
     }
 
-    public void perm(int[] arr, int depth, int n, int k,Set permList) {
+    public void perm(int[] arr, int depth, int n, int k, ArrayList permList) {
         if (depth == k) { // 한번 depth 가 k로 도달하면 사이클이 돌았음. 출력함.
             StringBuilder a = new StringBuilder();
             for (int i = 0; i < k; i++) {
-//                System.out.print(arr[i]);
+                System.out.print(arr[i]);
                 a.append(arr[i]);
             }
             permList.add(a);
             return;
         }
-        for (int i = depth; i < n; i++) {
+        for (int i = depth; i < arr.length; i++) {
             swap(arr, i, depth);
             perm(arr, depth + 1, n, k, permList);
             swap(arr, i, depth);
