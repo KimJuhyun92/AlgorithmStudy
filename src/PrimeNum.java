@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class PrimeNum {
-    public static void main(String[] ar){
+    public static void main(String[] args){
         String numbers = "17";
         System.out.println("result = "+ new PrimeNum().solution(numbers));
     }
