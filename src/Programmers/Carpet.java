@@ -15,7 +15,6 @@ public class Carpet {
     public int[] solution(int brown, int red) {
         int[] answer = new int[2];
 
-        int sum = brown + red;
         int x = 0;
         int y = 0;
 
@@ -26,6 +25,7 @@ public class Carpet {
                 if ((2 * (x + 2) + 2 * y) == brown) {
                     answer[0] = i + 2;
                     answer[1] = x + 2;
+                    break;
                 }
             }
         }
