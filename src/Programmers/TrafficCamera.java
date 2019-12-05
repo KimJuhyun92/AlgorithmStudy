@@ -23,7 +23,6 @@ public class TrafficCamera {
 
     public static int solution(int[][] routes) {
         int answer = 1;
-        int pivot = routes[0][1];
 
         Arrays.sort(routes, new Comparator<int[]>() {
             @Override
@@ -34,7 +33,9 @@ public class TrafficCamera {
             }
         });
 
-        for(int i =0; i<routes.length-1; i++){
+        int pivot = routes[0][1];
+
+        for(int i = 0; i<routes.length-1; i++){
             if(routes[i+1][0] <= pivot && routes[i+1][1] <= pivot){
                 pivot = routes[i+1][1];
             }
