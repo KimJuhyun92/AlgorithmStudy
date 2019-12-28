@@ -8,7 +8,6 @@ public class CandidateKey {
                 {"400","con","computer","4"},{"500","muzi","music","3"},{"600","apeach","music","2"}};
 
         System.out.println(solution(relation));
-
     }
 
     static public int solution(String[][] relation) {
