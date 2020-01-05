@@ -25,7 +25,7 @@ import java.util.StringTokenizer;
 4. 원판 숫자 합산
  */
 
-public class TurnDisk {
+public class Baekjoon17822_TurnDisk {
 
     static int N,M,T;
     static int[][] disk;
