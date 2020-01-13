@@ -63,8 +63,6 @@ public class Baekjoon11724_ConnectedComponent {
 
         while(!q.isEmpty()){
             v = q.poll();
-//            System.out.print(v + " ");
-
             for(int e : map[v]) {
                 if(!visited[e]) {
                     q.add(e);

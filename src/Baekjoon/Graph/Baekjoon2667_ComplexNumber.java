@@ -31,6 +31,8 @@ public class Baekjoon2667_ComplexNumber {
             }
         }
 
+        //큐에 1인 좌표를 넣어두고 while을 돌려서 bfs 안에 dfs로 돌려도 가능
+
         for(int i = 0; i<N; i++) {
             for (int j = 0; j < N; j++) {
                 if (map[i][j] == 1 && !visited[i][j]) {

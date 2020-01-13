@@ -12,7 +12,7 @@ import java.util.*;
 4. min 출력
  */
 
-public class Baejoon17142_Lab3 {
+public class Baekjoon17142_Lab3 {
     static int N, M;
     static int[][] map;
     static Queue<int[]> q = new LinkedList<>();
@@ -99,6 +99,7 @@ public class Baejoon17142_Lab3 {
 
                     if (r >= 0 && c >= 0 && r < N && c < N) {
                         if(!visited[r][c]){
+                            visited[r][c] = true;
                             if (tempMap[r][c] == 0) {
                                 spreadFlag = true;
                                 q.offer(new int[]{r, c});
