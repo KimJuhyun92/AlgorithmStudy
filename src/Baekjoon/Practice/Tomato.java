@@ -45,7 +45,6 @@ public class Tomato {
             System.exit(0);
         }
         bfs();
-
     }
 
     public static void bfs(){
