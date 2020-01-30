@@ -42,6 +42,11 @@ public class Baekjoon1197_MST_Prim {
             q.offer(v);
         }
 
+//        for(int i = 0; i<map.get(1).size(); i++){
+//            Edge v = map.get(1).get(i);
+//            q.offer(v);
+//        }
+
         System.out.println(prim(q));
     }
 
