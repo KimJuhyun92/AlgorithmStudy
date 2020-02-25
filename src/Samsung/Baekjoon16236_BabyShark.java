@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BabyShark {
+public class Baekjoon16236_BabyShark {
 
     static int N;
     static int sharkSize[] = {2,0}; // 0번째 -> 현재 사이즈, 1번째 -> 먹은 물고기의 수
