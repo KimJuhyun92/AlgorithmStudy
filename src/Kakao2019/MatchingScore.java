@@ -24,14 +24,15 @@ public class MatchingScore {
         Pattern link_pattern = Pattern.compile("<a href=\"https://(.+?)\">");
         // 물음표가 없으면 테스트케이스 2번 통과 but 제출할 시 1,2,9,12 실패
 //        Pattern word_pattern = Pattern.compile("(?i)[^a-z]" + word + "[^a-z]");
+        Pattern word_pattern = Pattern.compile("(?i)(([^a-zA-Z]|\b)?" + word + "([^a-zA-Z]|\b))");
 
         //물음표가 있으면 테스트케이스 2번 실패 but 제출할 시 통과.....
-//        Pattern word_pattern = Pattern.compile("(?i)([^a-zA-Z]" + word + "[^a-zA-Z])");
+//        Pattern word_pattern = Pattern.compile("(?i)([^a-zA-Z]?" + word + "[^a-zA-Z])");
 
         for(int i = 0; i<web.length; i++){
             Matcher url_matcher = url_pattern.matcher(pages[i]);
             Matcher link_matcher = link_pattern.matcher(pages[i]);
-//            Matcher word_matcher = word_pattern.matcher(pages[i]);
+            Matcher word_matcher = word_pattern.matcher(pages[i]);
             if(url_matcher.find()){
                 web[i] = new Web(i, url_matcher.group(1));
             }
@@ -39,19 +40,19 @@ public class MatchingScore {
             while(link_matcher.find()){
                 web[i].setExternalLink(link_matcher.group(1));
             }
-//            while(word_matcher.find()){
-//                web[i].baseScore++;
-//                System.out.println(word_matcher.group());
-//            }
+            while(word_matcher.find()){
+                web[i].baseScore++;
+                System.out.println(word_matcher.group(0));
+            }
 
             //새로운 방법!! -> 문자가 아닌것을 기준으로 스플릿 시키면 모두 단어이므로 이것을 word와 비교.
-            String[] str = pages[i].toLowerCase().split("[^a-z]");
-            for(int j = 0; j<str.length; j++) {
-                if(str[j].equals(word.toLowerCase())){
-                    web[i].baseScore++;
-                    System.out.println(str[j]);
-                }
-            }
+//            String[] str = pages[i].toLowerCase().split("[^a-z]");
+//            for(int j = 0; j<str.length; j++) {
+//                if(str[j].equals(word.toLowerCase())){
+//                    web[i].baseScore++;
+//                    System.out.println(str[j]);
+//                }
+//            }
 
         }
 
