@@ -9,7 +9,6 @@ import java.util.StringTokenizer;
 public class Baekjoon15686_ChickenDelivery {
 
     static int N, M;
-    static int[][] map;
     static ArrayList<int[]> house = new ArrayList<>();
     static ArrayList<int[]> chicken = new ArrayList<>();
     static ArrayList<int[]> candidate = new ArrayList<>();
@@ -21,13 +20,11 @@ public class Baekjoon15686_ChickenDelivery {
 
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-        map = new int[N + 1][N + 1];
 
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < N; j++) {
                 int num = Integer.parseInt(st.nextToken());
-                map[i][j] = num;
                 if (num == 1)
                     house.add(new int[]{i, j});
                 else if (num == 2)
